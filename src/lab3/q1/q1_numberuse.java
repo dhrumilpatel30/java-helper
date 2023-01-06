@@ -6,5 +6,4 @@ public class q1_numberuse {
         final NumberClass nc1 = new NumberClass(input);
         System.out.println("The given number is prime: "+nc1.isPrimeNumber());
     }
-
 }
