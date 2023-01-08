@@ -1,9 +1,12 @@
 package lab3.p1;
 import lab3.q2.Person;
-import java.util.Scanner;
 public class Employee extends Person{
-    private int rollno;
-    private double[] marks;
+    private final int Employee_id;
+    private String Department;
+    private double Gross_salary;
+    private double Provident_Fund;
+    private double Income_tax;
+    private double Professional_tax;
     private static int count;
     static{
         count=0;
@@ -12,60 +15,43 @@ public class Employee extends Person{
         return count;
     }
     public Employee() {
-        this.rollno = 0;
+        this.Employee_id = 0;
         count++;
     }
 
-    public Employee(int rollno) {
-        this.rollno = rollno;
+    public Employee(int Emploid, String Emp_name, int age) {
+        this.Employee_id = Emploid;
+        this.setAge(age);
+        this.setName(Emp_name);
         count++;
     }
-
-    public Employee(int rollno, double[] marks) {
-        this.rollno = rollno;
-        this.marks = marks;
+    public Employee(int Emploid, String Emp_name, int age,double Gross_salary,double Provident_Fund,double Income_tax,double Professional_tax, String Dept) {
+        this.Employee_id = Emploid;
+        this.setAge(age);
+        this.setName(Emp_name);
+        this.Gross_salary=Gross_salary;
+        this.Provident_Fund=Provident_Fund;
+        this.Income_tax=Income_tax;
+        this.Professional_tax=Professional_tax;
+        this.Department=Dept;
         count++;
     }
-
-    public Employee(int rollno, double[] marks, int age, String name) {
-        super(name, age);
-        this.rollno = 0;
-        this.marks = marks;
-        count++;
+    public double calculateSalary(double Gross_salary,double Provident_Fund,double Income_tax,double Professional_tax){
+        return Gross_salary+Provident_Fund-Income_tax-Professional_tax;
     }
-
-    public int getRollno() {
-        return rollno;
-    }
-
-    public double[] getMarks() {
-        return marks;
-    }
-
-    public void setRollno(int rollno) {
-        this.rollno = rollno;
-    }
-
-    public void setMarks(double[] marks) {
-        this.marks = marks;
+    public double calculateSalary(){
+        return Gross_salary+Provident_Fund-Income_tax-Professional_tax;
     }
 
     @Override
     public String toString() {
-        String str1 = String.format("Name is: %s and age is: %d RollNo. is: %d Marks are: ", getName(), getAge(), rollno);
-        for (double i : marks) {
-            str1 = str1.concat(i +" ");
-        }
-        return str1;
+        return String.format("Name is: %s and age is: %d salary is: %f Marks are: ", getName(), getAge(), calculateSalary());
     }
     public void displayDetails() {
-        System.out.println("Rollno="+rollno);
-        System.out.println("Name="+getName());
+        System.out.println("Employee ID="+Employee_id);
+        System.out.println("Employee Name="+getName());
         System.out.println("age="+getAge());
-        System.out.println("marks=");
-        for (double i : marks) {
-            System.out.println(i+ " ");
-        }
+        System.out.println("Department : "+ Department);
+        System.out.println("salary="+calculateSalary());
     }
-
 }
