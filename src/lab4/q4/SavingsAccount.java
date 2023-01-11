@@ -17,6 +17,9 @@ public class SavingsAccount implements Account{
     @Override
     public void withdraw(double amount) {
         try{
+            if(amount < 0){
+                throw new CustomExceptionforSA("The deposit amount should be positive");
+            }
             if(amount > available_balance){
                 throw new CustomExceptionforSA("The withdraw amount is more than available balance");
             }
