@@ -1,4 +1,4 @@
-package lab5;
+package lab5.q1;
 
 public class UndergraduateStudent extends Student{
     public UndergraduateStudent(String name) {
