@@ -10,7 +10,7 @@ public class Consumer implements Runnable{
 	@Override
 	public void run() {
 		while(true) {
-			System.out.println("poped "+q1.dequeue1());
+			System.out.println("pop of number "+q1.dequeue1());
 		}
 	}
 
