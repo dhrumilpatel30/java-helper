@@ -10,7 +10,7 @@ public class Producer implements Runnable{
 	@Override
 	public void run() {
 		int i = 0;
-        while (i<20) {
+		while (i<20) {
             q1.enqueue(i++);
             System.out.println("Pushed number"+i);
         }

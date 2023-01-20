@@ -1,47 +1,31 @@
 package lab5.q3;
 
 public class Queue1 {
-    int length,index;
-	int[] queue;
-
-	public Queue1(int sizeofqueue) {
-		length=sizeofqueue;
-		queue = new int[sizeofqueue];
-		index=0;
-	}
-	boolean isFull() {
-		return length == index;
-	}
-	boolean isEmpty() {
-		return 0 == index;
-	}
+    boolean is_empty = false;
+	int buffer;
 	synchronized public void enqueue(int element) {
-
-		while(isFull()) {
+		while(!is_empty) {
 			try {
-				Thread.sleep(2000);
                 wait();
             } catch (InterruptedException e) {
                 System.out.println("InterruptedException caught");
             }
 		}
+		buffer = element;
+		is_empty = true;
 		notify();
-		queue[index]=element;
-		index+=1;
 
 	}
 	synchronized public int dequeue1() {
-		while(isEmpty()) {
+		while(is_empty) {
 			try {
-				Thread.sleep(2000);
                 wait();
             } catch (InterruptedException e) {
                 System.out.println("InterruptedException caught");
             }
 		}
+		is_empty = false;
 		notify();
-		index-=1;
-		return queue[index];
-
+		return buffer;
 	}
 }
