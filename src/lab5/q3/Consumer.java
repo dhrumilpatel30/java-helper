@@ -12,6 +12,11 @@ public class Consumer implements Runnable{
 		int i=10;
 		while(i>0) {
 			i--;
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				throw new RuntimeException(e);
+			}
 			System.out.println("pop of number "+q1.dequeue1());
 		}
 	}
