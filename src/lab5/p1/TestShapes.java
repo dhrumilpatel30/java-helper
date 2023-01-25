@@ -40,5 +40,10 @@ public class TestShapes {
 
         Rectangle r2 = s1;
         System.out.println(r2.toString());
+
+        shapeInfo(c1);
+        shapeInfo(r1);
+        shapeInfo(s1);
+        shapeInfo(r2);
     }
 }
