@@ -3,7 +3,6 @@ package lab6.q1;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
 public class q1_ans {
     public static void main(String args[]) {
         try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost/jdbctry", "root", "")) {
@@ -15,7 +14,7 @@ public class q1_ans {
 
             java.util.Date dateStr = formatter.parse(date);
             java.sql.Date dateDB = new java.sql.Date(dateStr.getTime());
-            String insertQuery = "INSERT INTO `student1`(`name`, `dob`,`city`)VALUES('sonal mehta', '" + dateDB + "', 'Nadiad' )";
+            String insertQuery = "INSERT INTO `student`(`name`, `dob`,`city`)VALUES('sonal mehta', '" + dateDB + "', 'Nadiad' )";
             int i = s.executeUpdate(insertQuery);
             System.out.println(i + "rows inserted");
             String selectQuery = "select * from `student`";
@@ -40,7 +39,7 @@ public class q1_ans {
                 System.out.println("DoB: " + rs.getDate(3));
                 System.out.println("City: " + rs.getString(4));
             }
-            String deleteQuery = "DELETE FROM `student1` WHERE `id`=3";
+            String deleteQuery = "DELETE FROM `student` WHERE `id`=3";
             int d = s.executeUpdate(deleteQuery);
             System.out.println(d + "rows deleted");
 
