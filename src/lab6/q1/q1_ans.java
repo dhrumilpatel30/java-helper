@@ -3,17 +3,46 @@ package lab6.q1;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-public class q1_ans {
+public class q1_ans {//Student Registration form
+    public static void print_from_database(Statement s) throws SQLException {
+        String selectQuery = "select * from `student`";
+        ResultSet rs;
+        rs = s.executeQuery(selectQuery);
+        System.out.println("Printing the Information from Database");
+        while (rs.next()) {
+            System.out.println("........................");
+            System.out.println("Auto id: " + rs.getInt(1));
+            System.out.println("First Name: " + rs.getString(2));
+            System.out.println("Last Name: " + rs.getString(3));
+            System.out.println("Branch: " + rs.getString(4));
+            System.out.println("Username: " + rs.getString(5));
+            System.out.println("Password: " + rs.getString(6));
+        }
+    }
+    public static void Insert_in_database(Statement s) throws SQLException{
+
+    }
+    public static void Update_in_database(Statement s) throws SQLException{
+
+    }
+    public static void _database(Statement s) throws SQLException{
+
+    }
     public static void main(String args[]) {
-        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost/jdbctry", "root", "")) {
-            Statement s;
-            s = con.createStatement();
-            String date = "2021-01-01";
+        //setting up database
+        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost/student-registration", "root", "")) {
+            Statement s = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            //initially showing information already present in database
+            print_from_database(s);
 
-            java.util.Date dateStr = formatter.parse(date);
-            java.sql.Date dateDB = new java.sql.Date(dateStr.getTime());
+            //Giving User to choose the option for manipulation of data
+
+            System.out.println("Give your key according to choice.");
+            System.out.println("Insert a Row.: 1");
+            System.out.println("Update a Row.: 2");
+            System.out.println("Delete a Row.: 3");
+
             String insertQuery = "INSERT INTO `student`(`name`, `dob`,`city`)VALUES('sonal mehta', '" + dateDB + "', 'Nadiad' )";
             int i = s.executeUpdate(insertQuery);
             System.out.println(i + "rows inserted");
