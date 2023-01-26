@@ -3,7 +3,10 @@ package lab6.q1;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Scanner;
+
 public class q1_ans {//Student Registration form
+    private static Scanner sc = new Scanner(System.in);
     public static void print_from_database(Statement s) throws SQLException {
         String selectQuery = "select * from `student`";
         ResultSet rs;
@@ -20,12 +23,33 @@ public class q1_ans {//Student Registration form
         }
     }
     public static void Insert_in_database(Statement s) throws SQLException{
+        System.out.println("Insertion of a Row Started....\nGive proper Inputs");
 
+        try {
+            System.out.println("Enter the First Name");
+            String fname = sc.nextLine();
+            System.out.println("Enter the Last Name");
+            String lname = sc.nextLine();
+            System.out.println("Enter the Branch");
+            String branch = sc.nextLine();
+            System.out.println("Enter the Username");
+            String username = sc.nextLine();
+            System.out.println("Enter the password");
+            String password = sc.nextLine();
+            String insertQuery = "INSERT INTO `student` VALUES("+ fname +","+ lname +"," +
+                    ""+ branch +","+ username +","+ password +")";
+			s.executeUpdate(insertQuery);
+			System.out.println("row inserted, the given auto id to student is: "+);
+        }
+        catch (Exception e){
+            System.out.println("Unknown Error occurred");
+            e.printStackTrace();
+        }
     }
     public static void Update_in_database(Statement s) throws SQLException{
 
     }
-    public static void _database(Statement s) throws SQLException{
+    public static void Delete_from_database(Statement s) throws SQLException{
 
     }
     public static void main(String args[]) {
@@ -42,6 +66,7 @@ public class q1_ans {//Student Registration form
             System.out.println("Insert a Row.: 1");
             System.out.println("Update a Row.: 2");
             System.out.println("Delete a Row.: 3");
+            System.out.println("Multiple Insertion.: 4");
 
             String insertQuery = "INSERT INTO `student`(`name`, `dob`,`city`)VALUES('sonal mehta', '"  + "', 'Nadiad' )";
             int i = s.executeUpdate(insertQuery);
