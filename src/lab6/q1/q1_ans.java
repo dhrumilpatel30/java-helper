@@ -43,7 +43,7 @@ public class q1_ans {//Student Registration form
             System.out.println("Update a Row.: 2");
             System.out.println("Delete a Row.: 3");
 
-            String insertQuery = "INSERT INTO `student`(`name`, `dob`,`city`)VALUES('sonal mehta', '" + dateDB + "', 'Nadiad' )";
+            String insertQuery = "INSERT INTO `student`(`name`, `dob`,`city`)VALUES('sonal mehta', '"  + "', 'Nadiad' )";
             int i = s.executeUpdate(insertQuery);
             System.out.println(i + "rows inserted");
             String selectQuery = "select * from `student`";
@@ -81,8 +81,6 @@ public class q1_ans {//Student Registration form
                 System.out.println("City: " + rs.getString(4));
             }
         } catch (SQLException e) {
-            System.out.println(e);
-        } catch (ParseException e) {
             System.out.println(e);
         }
     }
