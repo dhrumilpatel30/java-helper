@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class q1_ans {//Student Registration form
     private static Scanner sc = new Scanner(System.in);
+
     public static void print_from_database(Statement s) throws SQLException {
         String selectQuery = "select * from `student`";
         ResultSet rs;
@@ -22,7 +23,8 @@ public class q1_ans {//Student Registration form
             System.out.println("Password: " + rs.getString(6));
         }
     }
-    public static void Insert_in_database(Statement s) throws SQLException{
+
+    public static void Insert_in_database(Connection con) throws SQLException{
         System.out.println("Insertion of a Row Started....\nGive proper Inputs");
 
         try {
@@ -36,22 +38,36 @@ public class q1_ans {//Student Registration form
             String username = sc.nextLine();
             System.out.println("Enter the password");
             String password = sc.nextLine();
-            String insertQuery = "INSERT INTO `student` VALUES("+ fname +","+ lname +"," +
-                    ""+ branch +","+ username +","+ password +")";
-			s.executeUpdate(insertQuery);
+            PreparedStatement ps=con.prepareStatement("insert into student values(?,?,?,?,?)");
+            ps.setString(1,fname);
+            ps.setString(2,lname);
+            ps.setString(3,branch);
+            ps.setString(4,username);
+            ps.setString(5,password);
+
+			ps.executeUpdate();
+            ps = con.prepareStatement("select * from student where username=?");
 			System.out.println("row inserted, the given auto id to student is: "+);
+        }
+        catch (SQLIntegrityConstraintViolationException e){
+            e.printStackTrace();
+            System.out.println("Try agian with different Username please");
+            Insert_in_database(con);
         }
         catch (Exception e){
             System.out.println("Unknown Error occurred");
             e.printStackTrace();
         }
     }
+
     public static void Update_in_database(Statement s) throws SQLException{
 
     }
+
     public static void Delete_from_database(Statement s) throws SQLException{
 
     }
+
     public static void main(String args[]) {
         //setting up database
         try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost/student-registration", "root", "")) {
@@ -59,6 +75,7 @@ public class q1_ans {//Student Registration form
 
             //initially showing information already present in database
             print_from_database(s);
+            Insert_in_database(con);
 
             //Giving User to choose the option for manipulation of data
 
