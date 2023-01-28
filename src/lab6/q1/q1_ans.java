@@ -1,11 +1,10 @@
 package lab6.q1;
 
 import java.sql.*;
-import java.text.*;
 import java.util.Scanner;
 
 public class q1_ans {//Student Registration form
-    private static Scanner sc = new Scanner(System.in);
+    private static final Scanner sc = new Scanner(System.in);
     public static void print_from_database(Connection con) throws SQLException {
         Statement s = con.createStatement();
         String selectQuery = "select * from `student`";
@@ -24,7 +23,7 @@ public class q1_ans {//Student Registration form
         }
     }
 
-    public static void Insert_in_database(Connection con) throws SQLException{
+    public static void insert_in_database(Connection con){
         System.out.println("\n\nInsertion of a Row Started....\nGive proper Inputs");
 
         try {
@@ -44,7 +43,6 @@ public class q1_ans {//Student Registration form
             ps.setString(3,branch);
             ps.setString(4,username);
             ps.setString(5,password);
-
 			ps.executeUpdate();
             ps = con.prepareStatement("select * from student where username=?");
             ps.setString(1,username);
@@ -55,7 +53,7 @@ public class q1_ans {//Student Registration form
         catch (SQLIntegrityConstraintViolationException e){
             e.printStackTrace();
             System.out.println("Try again with different Username please");
-            Insert_in_database(con);
+            insert_in_database(con);
         }
         catch (Exception e){
             System.out.println("Unknown Error occurred");
@@ -63,7 +61,7 @@ public class q1_ans {//Student Registration form
         }
     }
 
-    public static void Update_in_database(Connection con) throws SQLException{
+    public static void update_in_database(Connection con) throws SQLException{
         System.out.print("Update of row started...\nEnter the id for update: ");
         int id = sc.nextInt();
         sc.nextLine();
@@ -90,13 +88,13 @@ public class q1_ans {//Student Registration form
         System.out.println("Row successfully updated..");
     }
 
-    public static void Delete_from_database(Connection con) throws SQLException{
-        System.out.print("Delete of row started...\nEnter the id for Delete");
+    public static void delete_from_database(Connection con) throws SQLException{
+        System.out.print("Delete of row started...\nEnter the id for Delete: ");
         int id = sc.nextInt();
         sc.nextLine();
         Statement s = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs = s.executeQuery("select * from student where id="+id);
-        rs.absolute(id);
+        rs.absolute(1);
         rs.deleteRow();
         System.out.println("Row successfully deleted");
     }
@@ -111,17 +109,20 @@ public class q1_ans {//Student Registration form
             int choice = sc.nextInt();
             sc.nextLine();
             if(0 == choice)print_from_database(con);
-            if(1 == choice)Insert_in_database(con);
-            if(2 == choice)Update_in_database(con);
-            if(3 == choice)Delete_from_database(con);
+            if(1 == choice)insert_in_database(con);
+            if(2 == choice)update_in_database(con);
+            if(3 == choice)delete_from_database(con);
             if(4 == choice) {
-                while (0 == choice--) {
-                    Insert_in_database(con);
+                System.out.println("Enter the number of insertions: ");
+                int loop = sc.nextInt();
+                sc.nextLine();
+                while (0 == loop--) {
+                    insert_in_database(con);
                 }
             }
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         //setting up database
         try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost/student-registration", "root", "")) {
             //initially showing information already present in database
@@ -135,7 +136,7 @@ public class q1_ans {//Student Registration form
                 selector(con);
             }
         } catch (SQLException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 }
