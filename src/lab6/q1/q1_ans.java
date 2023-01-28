@@ -15,30 +15,30 @@ public class q1_ans {//Student Registration form
         System.out.println("Printing the Information from Database");
         while (rs.next()) {
             System.out.println("........................");
-            System.out.println("Auto id: " + rs.getInt(1));
-            System.out.println("First Name: " + rs.getString(2));
-            System.out.println("Last Name: " + rs.getString(3));
-            System.out.println("Branch: " + rs.getString(4));
-            System.out.println("Username: " + rs.getString(5));
-            System.out.println("Password: " + rs.getString(6));
+            System.out.println("Auto id: " + rs.getInt(6));
+            System.out.println("First Name: " + rs.getString(1));
+            System.out.println("Last Name: " + rs.getString(2));
+            System.out.println("Branch: " + rs.getString(3));
+            System.out.println("Username: " + rs.getString(4));
+            System.out.println("Password: " + rs.getString(5));
         }
     }
 
     public static void Insert_in_database(Connection con) throws SQLException{
-        System.out.println("Insertion of a Row Started....\nGive proper Inputs");
+        System.out.println("\n\nInsertion of a Row Started....\nGive proper Inputs");
 
         try {
-            System.out.println("Enter the First Name");
+            System.out.print("Enter the First Name: ");
             String fname = sc.nextLine();
-            System.out.println("Enter the Last Name");
+            System.out.print("Enter the Last Name: ");
             String lname = sc.nextLine();
-            System.out.println("Enter the Branch");
+            System.out.print("Enter the Branch: ");
             String branch = sc.nextLine();
-            System.out.println("Enter the Username");
+            System.out.print("Enter the Username: ");
             String username = sc.nextLine();
-            System.out.println("Enter the password");
+            System.out.print("Enter the password: ");
             String password = sc.nextLine();
-            PreparedStatement ps=con.prepareStatement("insert into student values(?,?,?,?,?)");
+            PreparedStatement ps=con.prepareStatement("insert into student(`fname`, `lname`, `branch`, `username`, `password`) values(?,?,?,?,?)");
             ps.setString(1,fname);
             ps.setString(2,lname);
             ps.setString(3,branch);
@@ -50,7 +50,7 @@ public class q1_ans {//Student Registration form
             ps.setString(1,username);
             ResultSet rs = ps.executeQuery();
             rs.next();
-			System.out.println("row inserted, the given auto id to student is: "+rs.getInt(1));
+			System.out.println("row inserted, the given auto id to student is: "+rs.getInt(6));
         }
         catch (SQLIntegrityConstraintViolationException e){
             e.printStackTrace();
@@ -63,12 +63,31 @@ public class q1_ans {//Student Registration form
         }
     }
 
-    public static void Update_in_database(Statement s) throws SQLException{
+    public static void Update_in_database(Connection con) throws SQLException{
 
     }
 
-    public static void Delete_from_database(Statement s) throws SQLException{
+    public static void Delete_from_database(Connection con) throws SQLException{
 
+    }
+    public static void selector(Connection con) throws SQLException {
+        //Giving User to choose the option for manipulation of data
+            System.out.println("Give your key according to choice.");
+            System.out.println("Insert a Row.: 1");
+            System.out.println("Update a Row.: 2");
+            System.out.println("Delete a Row.: 3");
+            System.out.println("Multiple Insertion.: 4");
+            int choice = sc.nextInt();
+            if(1 == choice)Insert_in_database(con);
+            if(2 == choice)Update_in_database(con);
+            if(3 == choice)Delete_from_database(con);
+            if(4 == choice){
+                while(0 == choice--){
+                    Insert_in_database(con);
+                }
+            }
+            System.out.print("Do you want to exit (y/n): ");
+            if("y" == sc.nextLine())selector(con);
     }
 
     public static void main(String args[]) {
@@ -78,53 +97,8 @@ public class q1_ans {//Student Registration form
 
             //initially showing information already present in database
             print_from_database(s);
-            Insert_in_database(con);
-
-            //Giving User to choose the option for manipulation of data
-
-            System.out.println("Give your key according to choice.");
-            System.out.println("Insert a Row.: 1");
-            System.out.println("Update a Row.: 2");
-            System.out.println("Delete a Row.: 3");
-            System.out.println("Multiple Insertion.: 4");
-
-            String insertQuery = "INSERT INTO `student`(`name`, `dob`,`city`)VALUES('sonal mehta', '"  + "', 'Nadiad' )";
-            int i = s.executeUpdate(insertQuery);
-            System.out.println(i + "rows inserted");
-            String selectQuery = "select * from `student`";
-            ResultSet rs;
-            rs = s.executeQuery(selectQuery);
-            while (rs.next()) {
-                System.out.println("........................");
-                System.out.println("Auto id: " + rs.getInt(1));
-                System.out.println("Name: " + rs.getString(2));
-                System.out.println("DoB: " + rs.getDate(3));
-                System.out.println("City: " + rs.getString(4));
-            }
-            String updateQuery = "UPDATE `student1` SET `city`='Anand' WHERE `id`=1 ";
-
-            int u = s.executeUpdate(updateQuery);
-            System.out.println(u + "rows updated");
-            rs = s.executeQuery(selectQuery);
-            while (rs.next()) {
-                System.out.println("........................");
-                System.out.println("Auto id: " + rs.getInt(1));
-                System.out.println("Name: " + rs.getString(2));
-                System.out.println("DoB: " + rs.getDate(3));
-                System.out.println("City: " + rs.getString(4));
-            }
-            String deleteQuery = "DELETE FROM `student` WHERE `id`=3";
-            int d = s.executeUpdate(deleteQuery);
-            System.out.println(d + "rows deleted");
-
-            rs = s.executeQuery(selectQuery);
-            while (rs.next()) {
-                System.out.println("........................");
-                System.out.println("Auto id: " + rs.getInt(1));
-                System.out.println("Name: " + rs.getString(2));
-                System.out.println("DoB: " + rs.getDate(3));
-                System.out.println("City: " + rs.getString(4));
-            }
+            //starting selections
+            selector(con);
         } catch (SQLException e) {
             System.out.println(e);
         }
