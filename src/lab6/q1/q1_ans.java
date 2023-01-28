@@ -47,11 +47,14 @@ public class q1_ans {//Student Registration form
 
 			ps.executeUpdate();
             ps = con.prepareStatement("select * from student where username=?");
-			System.out.println("row inserted, the given auto id to student is: "+);
+            ps.setString(1,username);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+			System.out.println("row inserted, the given auto id to student is: "+rs.getInt(1));
         }
         catch (SQLIntegrityConstraintViolationException e){
             e.printStackTrace();
-            System.out.println("Try agian with different Username please");
+            System.out.println("Try again with different Username please");
             Insert_in_database(con);
         }
         catch (Exception e){
