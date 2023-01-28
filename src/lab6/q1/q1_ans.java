@@ -107,7 +107,7 @@ public class q1_ans {//Student Registration form
             System.out.println("Insert a Row.: 1");
             System.out.println("Update a Row.: 2");
             System.out.println("Delete a Row.: 3");
-            System.out.print("Multiple Insertion.: 4\nkey:");
+            System.out.print("Multiple Insertion.: 4\nkey: ");
             int choice = sc.nextInt();
             sc.nextLine();
             if(0 == choice)print_from_database(con);
@@ -131,8 +131,7 @@ public class q1_ans {//Student Registration form
             while(true){
                 System.out.print("Do you want to exit (y/n): ");
                 String s = sc.nextLine();
-                System.out.println(s);
-                if("y" == s)break;
+                if(s.equals("y"))break;
                 selector(con);
             }
         } catch (SQLException e) {
