@@ -14,6 +14,7 @@ public class q1_ans_for_usage {
             try{System.out.println(rs.getInt(6));}
             catch (Exception e){e.printStackTrace();}
 
+
             rs.beforeFirst();//following will not work due to rs at start of dataset not initialised
             try{System.out.println(rs.getInt(6));}
             catch (Exception e){e.printStackTrace();}
