@@ -8,7 +8,7 @@ public class q1_ans_for_usage {
             Statement s = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             ResultSet rs = s.executeQuery("select * from student");
 
-//            q1_ans.print_from_database(con);
+            //q1_ans.print_from_database(con);
 
             rs.afterLast();//following will not work due to rs at end of dataset
             try{System.out.println(rs.getInt(6));}
