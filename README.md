@@ -1,4 +1,4 @@
-# java-proraming-questions
+# java-programing-questions
 
 ##### this contains some programs in java language.
 this repo is project of Intellij IDEA IDE
