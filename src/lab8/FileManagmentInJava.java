@@ -1,12 +1,12 @@
 package lab8;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class FileManagmentInJava {
     public static void main(String[] args) throws IOException {
+//		File f1 = new File("a.txt");
+//		f1.createNewFile();
         FileInputStream in = null;
 		FileOutputStream out = null;
 
@@ -18,7 +18,6 @@ public class FileManagmentInJava {
 		String foutname = sc.nextLine();
 		System.out.print("Do you want to append or copy file content(a/c): ");
 		String choice = sc.nextLine();
-		System.out.println(choice);
 		try {
 			in = new FileInputStream(finname);
 			if(choice.equals("a")){
@@ -26,13 +25,13 @@ public class FileManagmentInJava {
 			}
 			else if(choice.equals("c")){
 				out = new FileOutputStream(foutname);
+				out.write(13);
 			}
 			else {
 				System.out.println("Invalid Choice");
 				return;
 			}
 			int c;
-
 			while ((c = in.read()) != -1) {
 				out.write(c);
 			}
