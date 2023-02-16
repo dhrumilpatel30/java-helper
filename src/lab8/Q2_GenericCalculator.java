@@ -1,6 +1,6 @@
 package lab8;
 
-public class Q2_GenericCalculator <T extends Number,V extends Number>{
+public class Q2_GenericCalculator<T extends Number,V extends Number>{
     public double addition(T a, V b) {
 		return a.doubleValue()+b.doubleValue();
 	}
@@ -15,7 +15,7 @@ public class Q2_GenericCalculator <T extends Number,V extends Number>{
 	}
 	public static void main(String[] args) {
 
-		GenericCalculator<Integer, Double> gc = new GenericCalculator<>();
+		Q2_GenericCalculator<Integer, Double> gc = new Q2_GenericCalculator<>();
 
         System.out.println(gc.addition(2, 5.2));
         System.out.println(gc.subtraction(2, 5.2));
