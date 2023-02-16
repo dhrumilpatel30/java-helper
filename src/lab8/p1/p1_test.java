@@ -7,8 +7,9 @@ public class p1_test {
         q1.enqueue(2);
         q1.enqueue(3);
         q1.display();
-        q1.dequeue();
+        System.out.println(q1.dequeue());
         q1.enqueue(4);
         q1.display();
+        System.out.println(q1.dequeue());
     }
 }

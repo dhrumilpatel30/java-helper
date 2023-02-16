@@ -1,7 +1,6 @@
 package lab8.p1;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Queue <T extends Number >{
     int size;
@@ -13,13 +12,17 @@ public class Queue <T extends Number >{
         this.size = size;
         front_pointer=-1;
         last_pointer=-1;
-        queuearray = new ArrayList<>(20);
+        queuearray = new ArrayList<>();
+        for(int i=0;i<20;i++){
+            queuearray.add(null);
+        }
     }
     public void display(){
         System.out.println("Queue is: ");
         for(int i = front_pointer;i<=last_pointer && i>=0;i++){
-            System.out.println(queuearray.get(i)+"  ");
+            System.out.print(queuearray.get(i)+"  ");
         }
+        System.out.print("\n");
     }
     public void enqueue(T a){
         if(last_pointer == size){
@@ -33,7 +36,6 @@ public class Queue <T extends Number >{
         else {
             last_pointer = last_pointer + 1;
         }
-        queuearray.add(a);
         queuearray.set(last_pointer, a);
     }
     public T dequeue(){
