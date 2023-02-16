@@ -1,6 +1,6 @@
 package lab8;
 
-public class GenericCalculator <T extends Number,V extends Number>{
+public class Q2_GenericCalculator <T extends Number,V extends Number>{
     public double addition(T a, V b) {
 		return a.doubleValue()+b.doubleValue();
 	}

@@ -3,7 +3,7 @@ package lab8;
 import java.io.*;
 import java.util.Scanner;
 
-public class FileManagmentInJava {
+public class Q1_FileManagmentInJava {
     public static void main(String[] args) throws IOException {
 //		File f1 = new File("a.txt");
 //		f1.createNewFile();
