@@ -25,6 +25,7 @@ public class q1_SubstringCounter {
                 }
             }
         }
+
         System.out.println(substrings);
     }
 }

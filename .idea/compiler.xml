@@ -9,8 +9,5 @@
         <module name="javaprograming" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="javaprograming" target="19" />
-    </bytecodeTargetLevel>
   </component>
 </project>
