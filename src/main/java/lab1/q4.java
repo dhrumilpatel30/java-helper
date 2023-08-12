@@ -1,6 +1,11 @@
 package lab1;
 import java.util.Scanner;
 public class q4 {
+    /**
+     * This program takes input from the user for name, roll number and marks of a student.
+     * It then calculates the average marks and assigns a grade based on the average.
+     * Finally, it displays the name, roll number, average marks and grade of the student.
+     */
     public static void main(String[] args){
         System.out.println("Enter Deatils:");
         Scanner sc=new Scanner(System.in);

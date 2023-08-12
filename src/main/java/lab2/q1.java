@@ -3,6 +3,10 @@ package lab2;
 import java.util.Scanner;
 public class q1 {
     public static Scanner sc;
+    /**
+     * This program takes user input as a string and counts the number of times the substring "hi" appears in the input string.
+     * It then prints the length of the input string and the count of "hi" substrings.
+     */
     public static void main(String[] args) {
         System.out.println("Enter Username:");
         sc = new Scanner(System.in);
@@ -25,6 +29,7 @@ public class q1 {
                 }
             }
         }
+        
 
         System.out.println(substrings);
     }

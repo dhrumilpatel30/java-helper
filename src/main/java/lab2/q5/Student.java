@@ -1,5 +1,9 @@
 package lab2.q5;
 
+/**
+ * Represents a student with a roll number, name, and marks.
+ * Provides a method to calculate the average marks of the student.
+ */
 public class Student {
     int rollno;
     String name;

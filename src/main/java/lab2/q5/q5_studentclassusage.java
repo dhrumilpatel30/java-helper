@@ -1,5 +1,11 @@
 package lab2.q5;
 import java.util.*;
+/**
+ * This program takes input from the user for the number of students, their names, roll numbers and marks in 5 subjects.
+ * It then calculates the average marks of each student and finds the student with the highest average marks.
+ * Finally, it displays the roll number, name and average marks of the student with the highest average marks.
+ * The program uses the Student class to store the information of each student.
+ */
 public class q5 {
     public static void main(String []args){
         Scanner sc = new Scanner(System.in);

@@ -1,5 +1,9 @@
 package lab2;
 import java.util.Scanner;
+/**
+ * This class generates an abbreviation from a given input string by removing all spaces and tabs.
+ * The abbreviation is then printed to the console.
+ */
 public class q4 {
     public static Scanner sc;
     public static void main(String[] args) {
@@ -18,4 +22,5 @@ public class q4 {
         System.out.print(abbravation_generated);
         System.out.print('\n');
     }
+    
 }

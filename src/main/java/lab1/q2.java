@@ -1,3 +1,7 @@
+/**
+ * The q2 class prompts the user to enter a username and then greets the user by name.
+ * The user input is read using the Scanner class from the java.util package.
+ */
 package lab1;
 import java.util.Scanner;
 public class q2{
