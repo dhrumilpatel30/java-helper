@@ -1,6 +1,6 @@
 package lab2;
 import java.util.Scanner;
-public class q3_changenametoabbravation {
+public class q3 {
     public static Scanner sc;
     public static void main(String[] args) {
         System.out.println("Enter String:");

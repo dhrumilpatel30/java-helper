@@ -1,6 +1,6 @@
 package lab2.q5;
 import java.util.*;
-public class q5_studentclassusage {
+public class q5 {
     public static void main(String []args){
         Scanner sc = new Scanner(System.in);
         System.out.println("enter the no. of student:");

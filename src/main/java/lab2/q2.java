@@ -1,7 +1,7 @@
 package lab2;
 
 import java.util.Scanner;
-public class q2_pallidrome_checker {
+public class q2 {
     public static Scanner sc;
     public static void main(String[] args) {
         System.out.println("Enter String:");

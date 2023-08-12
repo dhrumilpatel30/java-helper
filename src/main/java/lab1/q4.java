@@ -1,6 +1,6 @@
 package lab1;
 import java.util.Scanner;
-public class q4_avg_of_student {
+public class q4 {
     public static void main(String[] args){
         System.out.println("Enter Deatils:");
         Scanner sc=new Scanner(System.in);

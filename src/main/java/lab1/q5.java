@@ -1,7 +1,7 @@
 package lab1;
 import java.util.Scanner;
 import java.lang.*;
-public class q5_sumofevennum {
+public class q5 {
     public static int calculateSumOfEvenNumbers(int[] arro){
         int total=0;
 

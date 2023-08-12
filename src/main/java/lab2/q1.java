@@ -1,7 +1,7 @@
 package lab2;
 
 import java.util.Scanner;
-public class q1_SubstringCounter {
+public class q1 {
     public static Scanner sc;
     public static void main(String[] args) {
         System.out.println("Enter Username:");

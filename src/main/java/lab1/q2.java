@@ -1,6 +1,6 @@
 package lab1;
 import java.util.Scanner;
-public class q3_hellowithinput {
+public class q2{
         public static void main(String[] args) {
             System.out.println("Enter Username:");
             Scanner sc = new Scanner(System.in);

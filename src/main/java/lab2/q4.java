@@ -1,6 +1,6 @@
 package lab2;
 import java.util.Scanner;
-public class q4_removeshitespace {
+public class q4 {
     public static Scanner sc;
     public static void main(String[] args) {
         System.out.println("Enter String:");
