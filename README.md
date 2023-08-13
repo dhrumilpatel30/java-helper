@@ -13,14 +13,15 @@ $ java <filename>
 ## Table of contents
 
 - [Basic operations in Java](#basic-operations-in-java)
-- [string operations in Java](#string-operations-in-java)
-- [classes in Java](#classes-in-java)
+- [String operations in Java](#string-operations-in-java)
+- [Classes in Java](#classes-in-java)
 - [Inheritance in Java](#inheritance-in-java)
 - [Exception handling in Java](#exception-handling-in-java)
 - [Multithreading in Java](#multithreading-in-java)
 - [Java Database Connectivity (JDBC) in Java](#java-database-connectivity-jdbc-in-java)
 - [Generics in Java](#generics-in-java)
 - [File Management in Java](#file-management-in-java)
+- ### [Jakarta EE and JSPs here](https://github.com/dhrumilpatel30/JakartaEE-pratice.git)
 
 ## Topics
 
@@ -32,7 +33,7 @@ $ java <filename>
 - [Avg in Java with loops](./src/main/java/lab1/q4.java)
 - [Methods](./src/main/java/lab1/q5.java)
 
-### string operations in Java
+### String operations in Java
 
 - [Substting counter](./src/main/java/lab2/q1.java)
 - [Pallingdrome](./src/main/java/lab2/q2.java)
@@ -40,7 +41,7 @@ $ java <filename>
 - [whitespace remover](./src/main/java/lab2/q4.java)
 - [String reverse](./src/main/java/lab2/q5.java)
 
-### classes in Java
+### Classes in Java
 
 - [Simple class](./src/main/java/lab2/q5/Student.java)
 - [Class usage](./src/main/java/lab2/q5/q5_studentclassusage.java)
@@ -103,3 +104,5 @@ $ java <filename>
 - [Directory management](./src/main/java/lab8/p2/p2_ans.java)
 - [File copy paste with buffer](./src/main/java/lab8/p3/p3_ans.java)
 - [File split](./src/main/java/lab8/p3/p3_ans.java)
+
+## [For more examples related to Jakarta EE and JSP visit my another repo here](https://github.com/dhrumilpatel30/JakartaEE-pratice)
