@@ -1,5 +1,7 @@
 # Java Helper
 
+view as a webpage here https://dhrumilpatel30.github.io/java-helper/
+
 The repo is containing some example questions and solutions for Java.
 Each question contains comments and explanation.
 
