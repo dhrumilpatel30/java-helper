@@ -24,6 +24,9 @@ $ java <filename>
 - [Generics in Java](#generics-in-java)
 - [File Management in Java](#file-management-in-java)
 - ### [Jakarta EE and JSPs here](https://github.com/dhrumilpatel30/JakartaEE-pratice.git)
+- [Basic JavaEE](#basic-javaee)
+- [Beans](#beans)
+- [Session Management](#session-management)
 
 ## Topics
 
@@ -108,3 +111,36 @@ $ java <filename>
 - [File split](./src/main/java/lab8/p3/p3_ans.java)
 
 ## [For more examples related to Jakarta EE and JSP visit my another repo here](https://github.com/dhrumilpatel30/JakartaEE-pratice)
+
+### Basic JavaEE
+
+- [Basic servlet](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/java/javaee/jakartaeepractice/HelloServlet.java)
+- [Basic JSP for login](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/webapp/lab6/q2/index.jsp)
+- [Servlet handling form data validation](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/java/lab6/q2/ValidateServlet.java)
+- [Servlet for showing Response](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/java/lab6/q2/WelcomeServlet.java)
+- [Using external Service(https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/masterSOUP)](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/java/lab6/p1/SearchOnGoogleServlet.java)
+- [Request headers](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/java/lab7/p1/DisplayHeadersServlet.java)
+- [Response headers](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/webapp/lab7/p1/setAndObserveHeader.jsp)
+
+### Beans
+
+- [Bean class for Calculator](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/java/lab6/q3/Calculator.java)
+- [Form for bean in JSP](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/webapp/lab6/q3/index.jsp)
+- [Calculation and response with bean in JSP](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/webapp/lab6/q3/ans.jsp)
+- [Feedback form without bean](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/webapp/lab6/p2/index.jsp/)
+- [Showing response](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/webapp/lab6/p2/result.jsp)
+- [Bean for Unit conversion](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/java/lab6/p3/Converter.java)
+- [usage of bean 1](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/webapp/lab6/p3/index.jsp)
+- [usage of bean 2](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/webapp/lab6/p3/calculate.jsp)
+- [Book bean](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/java/lab7/q3/Book.java)
+- [Select book](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/webapp/lab7/q3/Genre.html)
+- [Book view with jsp](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/webapp/lab7/q3/DisplayTheList.jsp)
+- [Controller servlet for book](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/java/lab7/q3/ControllerServlet.java)
+
+### Session Management
+
+- [Session management using servlet](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/java/lab7/q1/LoginVerifierServlet.java)
+- [login for session creation](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/webapp/lab7/q1/Login.html)
+- [welcome page for session](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/webapp/lab7/q1/first.jsp)
+- [another page for session](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/webapp/lab7/q1/second.jsp)
+- [logout for session](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/webapp/lab7/q1/logout.jsp)
