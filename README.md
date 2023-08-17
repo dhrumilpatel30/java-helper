@@ -118,7 +118,7 @@ $ java <filename>
 - [Basic JSP for login](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/webapp/lab6/q2/index.jsp)
 - [Servlet handling form data validation](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/java/lab6/q2/ValidateServlet.java)
 - [Servlet for showing Response](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/java/lab6/q2/WelcomeServlet.java)
-- [Using external Service(https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/masterSOUP)](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/java/lab6/p1/SearchOnGoogleServlet.java)
+- [Using external Service JSOUP](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/java/lab6/p1/SearchOnGoogleServlet.java)
 - [Request headers](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/java/lab7/p1/DisplayHeadersServlet.java)
 - [Response headers](https://github.com/dhrumilpatel30/JakartaEE-pratice/blob/master/src/main/webapp/lab7/p1/setAndObserveHeader.jsp)
 
